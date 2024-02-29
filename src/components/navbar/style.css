@@ -1,7 +1,6 @@
 .navtabs-wrapper {
   display: flex;
   justify-content: space-between;
-  margin: auto 20%;
   font-size: 32px;
   font-weight: 600;
 }
@@ -9,4 +8,10 @@
 .navtabs-wrapper a {
   color: white;
   text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  .navtabs-wrapper {
+    font-size: 24px;
+  }
 }

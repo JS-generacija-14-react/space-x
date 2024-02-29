@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
         <div className="view-wrapper">
+          <Navbar />
           <Routes>
             <Route path="/launches" element={<LaunchesView />} />
             <Route path="/rockets" element={<RocketsView />} />
