@@ -5,19 +5,22 @@ import LaunchesView from "./components/views/LaunchesView";
 import RocketsView from "./components/views/RocketsView";
 import ShipsView from "./components/views/ShipsView";
 import { Navbar } from "./components/navbar";
+import LaunchesContextProvider from "./context/LaunchesContext";
 function App() {
   return (
     <div className="App">
       <Router>
-        <div className="view-wrapper">
-          <Navbar />
-          <Routes>
-            <Route path="/launches" element={<LaunchesView />} />
-            <Route path="/rockets" element={<RocketsView />} />
-            <Route path="/ships" element={<ShipsView />} />
-            <Route path="/" element={<HomeView />} />
-          </Routes>
-        </div>
+        <LaunchesContextProvider>
+          <div className="view-wrapper">
+            <Navbar />
+            <Routes>
+              <Route path="/launches" element={<LaunchesView />} />
+              <Route path="/rockets" element={<RocketsView />} />
+              <Route path="/ships" element={<ShipsView />} />
+              <Route path="/" element={<HomeView />} />
+            </Routes>
+          </div>
+        </LaunchesContextProvider>
       </Router>
     </div>
   );

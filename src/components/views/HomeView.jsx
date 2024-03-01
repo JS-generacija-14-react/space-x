@@ -12,7 +12,9 @@ const HomeView = () => {
   useEffect(() => {
     instance
       .get("company")
-      .then((res) => setCompanyInfo(res.data))
+      .then((res) => {
+        setCompanyInfo(res.data);
+      })
       .catch((error) => {
         setError(true);
         console.error(error);
@@ -20,6 +22,9 @@ const HomeView = () => {
       .finally(() => {
         setLoading(false);
       });
+    // finally je deo JS Promise API-ja koji se izvrsava bez obzira da li je Promise
+    // resen uspesno ili ne (da li je otiso u then ili catch)
+    //  ova funkcija se uvek izvrsava nakon sto su se izvrsili then i catch blokovi
   }, []);
 
   return (
