@@ -6,6 +6,7 @@ import RocketsView from "./components/views/RocketsView";
 import ShipsView from "./components/views/ShipsView";
 import { Navbar } from "./components/navbar";
 import LaunchesContextProvider from "./context/LaunchesContext";
+import LaunchView from "./components/views/LaunchView";
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/launches" element={<LaunchesView />} />
+              <Route path="/launches/:launchId" element={<LaunchView />} />
               <Route path="/rockets" element={<RocketsView />} />
               <Route path="/ships" element={<ShipsView />} />
               <Route path="/" element={<HomeView />} />
